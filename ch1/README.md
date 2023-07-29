@@ -23,3 +23,29 @@ test_one.py .                                                            [100%]
 
 ============================== 1 passed in 0.01s ===============================
 ```
+
+### テストが失敗する場合
+```
+% pytest test_two.py 
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-7.4.0, pluggy-1.2.0
+rootdir: /Users/takuto/github/pytest_exercise/ch1
+plugins: pep8-1.0.6
+collected 1 item                                                               
+
+test_two.py F                                                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_failing _________________________________
+
+    def test_failing():
+>       assert (1, 2, 3) == (3, 2, 1)
+E       assert (1, 2, 3) == (3, 2, 1)
+E         At index 0 diff: 1 != 3
+E         Use -v to get more diff
+
+test_two.py:2: AssertionError
+=========================== short test summary info ============================
+FAILED test_two.py::test_failing - assert (1, 2, 3) == (3, 2, 1)
+============================== 1 failed in 0.02s ===============================
+```
